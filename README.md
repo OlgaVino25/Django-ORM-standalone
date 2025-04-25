@@ -43,10 +43,22 @@ ALLOWED_HOSTS=Список разрешенных доменов через за
 DEBUG=True
 ```
 2. Описание переменных:
+
+**Переменные окружения для БД:**
+- DB_ENGINE - движок БД
+- DB_HOST - хост БД
+- DB_PORT - порт БД
+- DB_NAME - название БД
+- DB_USER - пользователь БД
+- DB_PASSWORD - пароль пользователя БД
+
+**Настройки Django:**
+- INSTALLED_APPS – по умолчанию содержит `['datacenter']`.
 - SECRET_KEY - Криптографический ключ для подписей сессий и CSRF-токенов.
+- TIME_ZONE – временная зона, задаётся через `.env`.  
+- USE_TZ – `True` (использование временных зон включено).  
 - ALLOWED_HOSTS - Список разрешенных доменов (разделять запятыми).
 - DEBUG - Режим отладки (True/False). В production должен быть False!
-- DATABASE_URL - URL подключения к PostgreSQL в формате: postgres://user:password@host:port/dbname
 3. Добавьте `.env` в `.gitignore` для защиты конфиденциальных данных:
 ```python
 echo ".env" >> .gitignore
